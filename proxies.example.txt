@@ -1,0 +1,28 @@
+# ==============================================================================
+# NAIC / SBS Scraper Proxy Pool Configuration Template
+# ==============================================================================
+# To use:
+#   1. Copy or rename this file to 'proxies.txt' in this directory, OR
+#   2. Run: python3 naic_scraper_fast.py --all-states --proxy-file your_proxies.txt
+#
+# Supported Proxy Formats (one proxy per line):
+# ------------------------------------------------------------------------------
+# 1. IP:PORT:USERNAME:PASSWORD (Standard commercial format, e.g. Webshare, BrightData, Smartproxy)
+#    192.168.1.100:8080:user123:secret456
+#
+# 2. IP:PORT (Unauthenticated or IP-whitelisted proxies)
+#    192.168.1.100:8080
+#
+# 3. HTTP URL format:
+#    http://user123:secret456@proxy.example.com:8080
+#    http://proxy.example.com:8080
+#
+# 4. SOCKS5 format:
+#    socks5://user123:secret456@proxy.example.com:1080
+#    socks5://proxy.example.com:1080
+#
+# Notes:
+# - Blank lines and lines starting with '#' are automatically ignored.
+# - If a proxy fails or times out, the scraper immediately catches it, marks it,
+#   and rotates to another working proxy without losing the query.
+# - If you provide 10+ proxies, you can comfortably scale to 25-40 workers!
